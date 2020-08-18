@@ -95,7 +95,7 @@ public class Evento {
         PartEventoDAO ld = new PartEventoDAO();
         return "["+nome_evento+"]\nLocal: "+ld.localName(local_evento)+"\nData: "+dat[2]+"/"+dat[1]+"/"+dat[0]+"\nHorario: "+hora_evento.toString();
     }
-    public Evento(String nome,String descricao,LocalDate data,LocalTime hora,int local,int qtd, int... id){
+    public Evento(String nome,String descricao,LocalDate data,LocalTime hora,int local,int qtd, int ...id){
         nome_evento = nome;
         descricao_evento = descricao;
         local_evento = local;
