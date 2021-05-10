@@ -110,13 +110,13 @@ public class EventoDAO {
             ResultSet rs = stmt.executeQuery();
             
             while(rs.next()){
+                int id = rs.getInt("evento_id");
                 String nome = rs.getString("nome_evento");
                 String descricao = rs.getString("descricao_evento");
                 LocalDate data = rs.getObject("data_evento", LocalDate.class);
                 LocalTime hora = rs.getObject("hora_evento", LocalTime.class);
                 int local = rs.getInt("id_local");
                 int qtd = rs.getInt("qtd_participante");
-                int id = rs.getInt("evento_id");
                 
                 Evento evento = new Evento(id,nome,descricao,data,hora,local,qtd);
                 listarEventos.add(evento);
@@ -135,13 +135,13 @@ public class EventoDAO {
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()){
+                int evento_id = rs.getInt("evento_id");
                 String nome = rs.getString("nome_evento");
                 String descricao = rs.getString("descricao_evento");
                 LocalDate data = rs.getObject("data_evento", LocalDate.class);
                 LocalTime hora = rs.getObject("hora_evento", LocalTime.class);
                 int local = rs.getInt("id_local");
                 int qtd = rs.getInt("qtd_participante");
-                int evento_id = rs.getInt("evento_id");
 
                 eve = new Evento(evento_id,nome,descricao,data,hora,local,qtd);
                 System.out.println(eve.toStringUnico());

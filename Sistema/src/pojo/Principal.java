@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 public class Principal {
     
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException{
         
         Scanner tec = new Scanner(System.in);           
         
@@ -17,40 +17,36 @@ public class Principal {
             tipo = tec.nextInt();
             switch (tipo) {
                 case 1:
-                    System.out.println("Senha: ");
-                    //int password = tec.nextInt();
+                    // System.out.println("Senha: ");
+                    // int password = tec.nextInt();
                     Administrador adm = new Administrador();
-                    if(true){//adm.verifica_senha(password)){
-                        adm.show_menu();
-                        OUTER_1:
-                        while (true) {
-                            comando = tec.nextInt();
-                            switch (comando) {
-                                case 0:
-                                    break OUTER_1;
-                                case 1:
-                                    adm.gerenciar_evento();
-                                    break;
-                                case 2:
-                                    adm.gerenciar_participante();
-                                    break;
-                                case 3:
-                                    adm.gerenciar_local();
-                                    break;
-                                case 4:
-                                    adm.gerenciarPartEvento();
-                                    break;
-                                case 9:
-                                    adm.show_menu();
-                                    break;
-                                default:
-                                    System.out.println("Opcao invalida");
-                                    break;
-                            }
+                    adm.show_menu();
+                    OUTER_1:
+                    while (true) {
+                        comando = tec.nextInt();
+                        switch (comando) {
+                            case 0:
+                                break OUTER_1;
+                            case 1:
+                                adm.gerenciar_evento();
+                                break;
+                            case 2:
+                                adm.gerenciar_participante();
+                                break;
+                            case 3:
+                                adm.gerenciar_local();
+                                break;
+                            case 4:
+                                adm.gerenciarPartEvento();
+                                break;
+                            case 9:
+                                adm.show_menu();
+                                break;
+                            default:
+                                System.out.println("Opcao invalida");
+                                break;
                         }
-                    }else{
-                        System.out.println("Senha incorreta!");
-                    }     break;
+                    }
                 case 2:
                     Usuario user = new Usuario();
                     user.show_menu();
@@ -117,6 +113,7 @@ public class Principal {
                     break;
                 case 0:
                     System.out.println("Obrigado pela visita, volte sempre!");
+                    tec.close();
                     break OUTER;
                 default:
                     System.out.println("Opcao inválida");

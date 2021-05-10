@@ -78,11 +78,11 @@ public class PartEventoDAO {
         try{
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
-            int i = 1;
+            // int i = 1;
             while(rs.next()){
                 int id = rs.getInt("evento_id");
                 ids.add(id);
-                i++;
+                // i++;
             }
             stmt.close();
         }catch (SQLException e) {
@@ -207,13 +207,13 @@ public class PartEventoDAO {
         "WHERE E.evento_id = PE.evento_id ORDER BY E.evento_id";
         
         this.connection = new ConnectionFactory().getConnection();
-        boolean primeira = true;
-        List<Integer> ids = idsEvento();
+        // boolean primeira = true;
+        // List<Integer> ids = idsEvento();
         try{
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
-            int i;            
-            i = 0;
+            // int i;            
+            // i = 0;
             while(rs.next()){
                 int evento_id = rs.getInt("evento_id");
                 String nome_local = localName(rs.getInt("id_local"));
@@ -267,7 +267,7 @@ public class PartEventoDAO {
                 +" PE.evento_id = "+evento.getEvento_id()+") S, participante P WHERE S.participante_id = P.participante_id";
         
         this.connection = new ConnectionFactory().getConnection();
-        String nome_local = localName(evento.getEvento_id());
+        // String nome_local = localName(evento.getEvento_id());
         try{
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -316,7 +316,7 @@ public class PartEventoDAO {
                      +"participante P where P.participante_id = RS.participante_id ORDER BY RS.evento_id";
         
         this.connection = new ConnectionFactory().getConnection();
-        boolean primeira = true;
+        // boolean primeira = true;
         List<Integer> ids = idsEvento();
         System.out.println(local.getNome_local());
         try{

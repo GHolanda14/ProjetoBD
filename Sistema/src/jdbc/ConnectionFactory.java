@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConnectionFactory {    
 	public Connection getConnection() {
         try {
-            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/Trabalho_Final" , "postgres","fbd");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/Trabalho_Final" , "postgres","admin");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

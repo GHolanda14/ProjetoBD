@@ -9,13 +9,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import pojo.Local;
 import jdbc.ConnectionFactory;
-import pojo.BoaDaSemana;
-import pojo.Evento;
 public class LocalDAO {
     private Connection connection;
     

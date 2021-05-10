@@ -139,7 +139,6 @@ public class Administrador {
     
     void gerenciar_local() throws SQLException{
         int id;
-        String nome_local;
         ArrayList<Local> locais;
         show_menu_adm();
         OUTER:
@@ -156,8 +155,8 @@ public class Administrador {
                     
                 case 2:
                     tec.nextLine();
-                    System.out.print("Nome do local: ");
-                    nome_local = tec.nextLine();
+                    // System.out.print("Nome do local: ");
+                    // String nome_local = tec.nextLine();
                     System.out.print("Digite o id: ");
                     id = tec.nextInt();
                     if(localDAO.editarLocal(id,constroiLocal())) System.out.println("Sucesso!");
@@ -289,7 +288,6 @@ public class Administrador {
     
     void gerenciarPartEvento() throws SQLException{
         menu();
-        ArrayList<PartEvento> listPartEvento;
         OUTER:
         while(true){
             opcao = tec.nextInt();

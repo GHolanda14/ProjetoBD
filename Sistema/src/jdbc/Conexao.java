@@ -24,11 +24,11 @@ public class Conexao {
         return result;
     }
     public void desconecta() {
-        boolean result = true;
+        // boolean result = true;
         try {
             conexao.close();
         } catch (SQLException erroSQL) {
-           result = false;
+        //    result = false;
         }
     }
       public void ConsultaSQL(String sql){
